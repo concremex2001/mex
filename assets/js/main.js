@@ -1,4 +1,4 @@
-// Scroll suave nos links de navegação
+// Scroll suave para links internos (#ancora)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const targetId = link.getAttribute('href');
@@ -8,14 +8,17 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     if (!target) return;
 
     e.preventDefault();
+    const offset = 72; // altura aproximada do topo fixo
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
     window.scrollTo({
-      top: target.offsetTop - 72,
+      top,
       behavior: 'smooth'
     });
   });
 });
 
-// Menu mobile
+// Menu mobile (abre/fecha nav no celular)
 const navToggle = document.querySelector('.nav-toggle');
 const nav = document.querySelector('.nav');
 
