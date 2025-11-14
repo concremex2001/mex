@@ -1,18 +1,31 @@
-# Publicação no GitHub Pages
+# Site estático para GitHub Pages
 
-Pacote pronto para subir.
+Estrutura mínima pronta para publicação.
 
-## Go-to-market
-1. Crie um repositório (ex.: `concremex`), branch padrão `main`.
-2. Envie **todo o conteúdo** deste ZIP para a raiz do repositório.
-3. Acesse *Settings → Pages*: a origem será **GitHub Actions** (já configurado neste pacote).
-4. No primeiro push, o fluxo `Deploy static site to Pages` executa e publica.
+## Publicação rápida (GitHub Pages via Actions)
+1. Crie um repositório no GitHub e faça upload de **todos os arquivos** deste ZIP.
+2. Garanta que o branch padrão é `main`.
+3. Vá em **Settings › Pages** e verifique se a fonte é **GitHub Actions**.
+4. No primeiro push para `main`, o workflow `Deploy static site to Pages` fará o deploy.
+5. O endereço ficará em `https://SEU_USUARIO.github.io/NOME_DO_REPO/`.
 
-## URL esperada
-`https://SEU_USUARIO.github.io/NOME_DO_REPO/`
+## Estrutura
+```
+.
+├── .github/workflows/pages.yml   # Deploy automático
+├── assets/
+│   ├── css/styles.css
+│   └── js/main.js
+├── index.html
+├── robots.txt
+├── sitemap.xml
+├── LICENSE
+└── README.md
+```
 
-## Observações
-- Arquivo de entrada obrigatório: `index.html` na **raiz**.
-- Recursos estáticos ficam em `assets/` (caminhos relativos).
+## Customização
+- Edite `index.html`, `assets/css/styles.css` e `assets/js/main.js`.
+- Se usar domínio customizado, crie um arquivo `CNAME` na raiz com o domínio.
 
-© 2025
+## Suporte
+Se precisar de layout corporativo ou páginas adicionais, solicite que eu gere um novo pacote.

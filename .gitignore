@@ -1,0 +1,7 @@
+# Editor e SO
+.DS_Store
+Thumbs.db
+
+# Node (se usar futuramente)
+node_modules
+dist
