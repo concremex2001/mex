@@ -1,53 +1,230 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
+  <title>Concremex Artefatos de Concreto – Rondonópolis/MT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meu Site</title>
-  <meta name="description" content="Landing page estática pronta para GitHub Pages.">
+  <meta name="description"
+        content="Concremex Artefatos de Concreto – Pavimentadoras, manilhas, aduelas e caixas de inspeção para obras de infraestrutura em Rondonópolis–MT e região.">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header class="container">
-    <h1>Meu Site</h1>
-    <p>Estrutura mínima para publicar no GitHub Pages.</p>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-      <a href="sitemap.xml">Sitemap</a>
-    </nav>
+  <!-- Cabeçalho -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-title">CONCREMEX</span>
+        <span class="brand-subtitle">Artefatos de Concreto</span>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav">
+        <a href="#produtos">Produtos</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <section id="sobre">
-      <h2>Sobre</h2>
-      <p>Substitua este conteúdo pelo seu. Os arquivos já estão prontos para deploy via GitHub Actions.</p>
-      <div class="card">
-        <h3>Pronto para produção</h3>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Artefatos de concreto para obras que não podem parar.</h1>
+        <p>
+          Pavimentadoras, manilhas, aduelas e caixas em conformidade com as normas técnicas,
+          produzidas em Rondonópolis–MT para atender prefeituras, construtoras e empresas de infraestrutura.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary"
+             href="https://wa.me/qr/MN7SMVMS43FNA1"
+             target="_blank" rel="noopener">
+            Solicitar orçamento no WhatsApp
+          </a>
+          <a class="btn btn-outline" href="#produtos">Ver catálogo de produtos</a>
+        </div>
+        <div class="hero-highlights">
+          <span>Produção local</span>
+          <span>Atendimento técnico especializado</span>
+          <span>Normas ABNT aplicáveis</span>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Trocar a imagem depois que tiver o arquivo em assets/img -->
+        <div class="hero-photo"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produtos -->
+  <section id="produtos" class="section section-alt">
+    <div class="container">
+      <header class="section-header">
+        <h2>Principais linhas de produtos</h2>
+        <p>Portfólio focado em obras de drenagem, pavimentação e saneamento.</p>
+      </header>
+
+      <div class="grid grid-3">
+        <article class="card">
+          <h3>Pavimentadoras (Pavers)</h3>
+          <p>
+            Piso intertravado em diferentes espessuras para calçadas, áreas de lazer, estacionamentos
+            e pátios industriais. Produção com controle de Fck e cores sob consulta.
+          </p>
+          <ul>
+            <li>Modelos 10x20, 16 faces e outros</li>
+            <li>Espessuras 6 cm, 8 cm, 10 cm</li>
+            <li>Aplicação em obras públicas e privadas</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Manilhas de Concreto</h3>
+          <p>
+            Tubos de concreto conforme NBR 8890, para redes de águas pluviais, galerias e travessias.
+          </p>
+          <ul>
+            <li>Diâmetros DN 300 a DN 1500</li>
+            <li>Classes estruturais PA-1, PA-2 e PA-3</li>
+            <li>Junta macho–fêmea com vedação adequada</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Aduelas e Caixas</h3>
+          <p>
+            Aduelas celulares e caixas de inspeção para drenagem, bueiros, passagens de fauna e reservatórios técnicos.
+          </p>
+          <ul>
+            <li>Dimensões sob projeto</li>
+            <li>Produção com Fck conforme especificação</li>
+            <li>Atendimento a obras rodoviárias e urbanas</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section id="diferenciais" class="section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Por que contratar a Concremex</h2>
+        <p>Estrutura enxuta, foco em qualidade e atendimento direto com engenharia.</p>
+      </header>
+
+      <div class="grid grid-3">
+        <article class="card card-soft">
+          <h3>Foco em obras públicas</h3>
+          <p>
+            Experiência em atendimento a prefeituras, autarquias e empresas contratadas, com suporte
+            a licitações, memoriais e especificações técnicas.
+          </p>
+        </article>
+        <article class="card card-soft">
+          <h3>Engenharia à frente da fábrica</h3>
+          <p>
+            Acompanhamento técnico desde o traço do concreto até a expedição, garantindo rastreabilidade
+            e compatibilidade com projetos estruturais.
+          </p>
+        </article>
+        <article class="card card-soft">
+          <h3>Produção local em Rondonópolis–MT</h3>
+          <p>
+            Logística otimizada para a região sul de Mato Grosso, com redução de frete e prazos mais eficientes.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="section section-alt">
+    <div class="container about-layout">
+      <div>
+        <h2>Sobre a Concremex</h2>
+        <p>
+          A Concremex Artefatos de Concreto nasce da experiência prática em obras de infraestrutura
+          e da necessidade de um fornecedor local comprometido com normas técnicas e entrega confiável.
+        </p>
+        <p>
+          Atendemos construtoras, órgãos públicos e empresas privadas com foco em soluções de drenagem,
+          pavimentação e saneamento. Cada produto é pensado para facilitar a execução em campo e reduzir retrabalho.
+        </p>
+      </div>
+      <div class="about-highlight">
+        <h3>Segmentos atendidos</h3>
         <ul>
-          <li>HTML sem dependências</li>
-          <li>CSS organizado</li>
-          <li>JavaScript modular</li>
-          <li>Workflow de deploy</li>
+          <li>Obras de drenagem urbana</li>
+          <li>Parques, praças e áreas de lazer</li>
+          <li>Loteamentos e condomínios</li>
+          <li>Indústrias e centros logísticos</li>
         </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <form onsubmit="return false;">
-        <label>Seu e-mail</label>
-        <input type="email" placeholder="voce@exemplo.com" required>
-        <label>Mensagem</label>
-        <textarea placeholder="Escreva sua mensagem..." required></textarea>
-        <button id="enviar">Enviar</button>
-      </form>
-      <p class="hint">Dica: troque este formulário por um serviço de forms ou backend.</p>
-    </section>
-  </main>
+  <!-- Contato -->
+  <section id="contato" class="section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Contato e orçamentos</h2>
+        <p>Envie os quantitativos ou o projeto da sua obra para receber uma proposta estruturada.</p>
+      </header>
 
-  <footer class="container">
-    <small>&copy; <span id="year"></span> Seu Nome. Todos os direitos reservados.</small>
+      <div class="contact-layout">
+        <div>
+          <h3>Canais de atendimento</h3>
+          <ul class="contact-list">
+            <li><strong>E-mail:</strong> concremex2001@gmail.com.br (exemplo)</li>
+            <li><strong>Telefone / WhatsApp:</strong> (66) 9 99646-4790 (exemplo)</li>
+            <li><strong>Cidade:</strong> Rondonópolis – MT</li>
+          </ul>
+          <p class="contact-note">
+            Inclua no contato: nome da obra, município, itens desejados, prazos e condições de entrega
+            (FOB ou CIF).
+          </p>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <label>
+            Nome
+            <input type="text" placeholder="Seu nome completo" required>
+          </label>
+          <label>
+            E-mail
+            <input type="email" placeholder="seuemail@empresa.com" required>
+          </label>
+          <label>
+            Mensagem
+            <textarea rows="4" placeholder="Descreva resumidamente a obra e os produtos desejados."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary btn-full" disabled>
+            Enviar mensagem (exemplo visual)
+          </button>
+          <p class="form-hint">
+            Este formulário é ilustrativo. Use o WhatsApp ou o e-mail acima como canal principal.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>CONCREMEX Artefatos de Concreto</strong><br>
+        Rondonópolis–MT
+      </div>
+      <div class="footer-links">
+        <a href="#top">Voltar ao topo</a>
+        <a href="#contato">Falar com a Concremex</a>
+      </div>
+    </div>
   </footer>
 
   <script src="assets/js/main.js"></script>
