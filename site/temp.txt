@@ -132,17 +132,13 @@
                     <p class="section-kicker">Contato</p>
                     <h2>Fale com a nossa equipe</h2>
                 </div>
-                <div class="contact-columns">
-                    <address class="contact-list">
-                        <p><strong>Endereco:</strong> Micro Distrito Anézio Pereira de Oliveira - Rua 04, lote 26/28 - Vila Operária, Rondonópolis - MT</p>
-                        <p><strong>CEP:</strong> 78721-804</p>
-                        <p><strong>Telefone / WhatsApp:</strong> <a href="https://wa.me/55669996464790" target="_blank" rel="noopener">(66) 9 9646-4790</a></p>
-                        <p><strong>E-mail:</strong> <a href="mailto:concremex2001@gmail.com">concremex2001@gmail.com</a></p>
-                    </address>
-                    <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.2153261455055!2d-54.6178446!3d-16.413887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9379c90c313bba83%3A0xa326b386c9bf29ea!2sConcremex!5e0!3m2!1spt-BR!2sbr!4v1763469009785!5m2!1spt-BR!2sbr" width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da Concremex"></iframe>
-                    </div>
-                </div>
+                <address class="contact-list">
+                    <p><strong>Endereco:</strong> Micro Distrito Anézio Pereira de Oliveira - Rua 04, lote 26/28 - Vila Operária, Rondonópolis - MT</p>
+                    <p><strong>CEP:</strong> 78721-804</p>
+                    <p><strong>Telefone / WhatsApp:</strong> <a href="https://wa.me/556696464790" target="_blank" rel="noopener">(66) 9 9646-4790</a></p>
+                    <p><strong>E-mail:</strong> <a href="mailto:concremex2001@gmail.com">concremex2001@gmail.com</a></p>
+                </address>
+                </address>
             </div>
         </section>
 
