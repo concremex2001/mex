@@ -5,3 +5,5 @@ Thumbs.db
 # Node (se usar futuramente)
 node_modules
 dist
+.env
+concremex-api/.env

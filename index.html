@@ -208,69 +208,27 @@
         </div>
     </footer>
     <script>
-        (function () {
-            const form = document.getElementById("form-orcamento");
-            if (!form) return;
+document.querySelector("form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-            const getValue = (data, key) => {
-                const value = data.get(key);
-                return typeof value === "string" ? value.trim() : "";
-            };
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form).entries());
 
-            form.addEventListener("submit", async (event) => {
-                event.preventDefault();
+  const response = await fetch("/api/contaazul/orcamento", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
 
-                const formData = new FormData(form);
-                const submitButton = form.querySelector('button[type="submit"]');
-                if (submitButton) {
-                    submitButton.dataset.originalText = submitButton.textContent || "";
-                    submitButton.textContent = "Enviando...";
-                    submitButton.disabled = true;
-                }
+  const result = await response.json();
 
-                const payload = {
-                    nome: getValue(formData, "nome"),
-                    empresa: getValue(formData, "empresa"),
-                    cnpj: getValue(formData, "cnpj"),
-                    email: getValue(formData, "email"),
-                    whatsapp: getValue(formData, "whatsapp"),
-                    cidade: getValue(formData, "cidade"),
-                    tipo_atendimento: getValue(formData, "tipo_atendimento"),
-                    perfil_cliente: getValue(formData, "perfil_cliente"),
-                    escopo_comercial: getValue(formData, "escopo_comercial"),
-                    numero_edital: getValue(formData, "numero_edital"),
-                    prazo_entrega: getValue(formData, "prazo_entrega"),
-                    mensagem: getValue(formData, "mensagem"),
-                };
-
-                try {
-                    const response = await fetch("/api/contaazul/orcamento", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(payload),
-                    });
-
-                    if (!response.ok) {
-                        throw new Error("Falha ao enviar solicitacao");
-                    }
-
-                    alert("Solicitacao enviada com sucesso!");
-                    form.reset();
-                } catch (error) {
-                    console.error("Erro ao enviar solicitacao:", error);
-                    alert("Nao foi possivel enviar sua solicitacao. Tente novamente em instantes.");
-                } finally {
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.textContent =
-                            submitButton.dataset.originalText || "Enviar pedido de orcamento";
-                        delete submitButton.dataset.originalText;
-                    }
-                }
-            });
-        })();
+  if (result.sucesso) {
+    alert("Orçamento enviado com sucesso!");
+    form.reset();
+  } else {
+    alert("Erro: " + JSON.stringify(result));
+  }
+});
     </script>
 </body>
 </html>
