@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Concremex - Artefatos de concreto em Rondonopolis-MT conforme normas ABNT.">
     <title>Concremex | Artefatos de Concreto em Rondonopolis-MT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -26,13 +29,15 @@
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
-                <p class="hero-kicker">Concremex | Rondonopolis-MT</p>
-                <h1>Artefatos de concreto para obras de infraestrutura e construcao civil.</h1>
-                <p class="hero-subtitle">Fabricamos pavimentadoras, manilhas, aduelas, caixas QDP/TDP e pecas sob medida, com controle de qualidade e conformidade com as normas ABNT para obras publicas e privadas.</p>
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="https://wa.me/55669996464790" target="_blank" rel="noopener">Solicitar orcamento pelo WhatsApp</a>
-                    <a class="btn btn-secondary" href="#produtos">Ver catalogo de produtos</a>
+            <div class="container hero-inner">
+                <div class="hero-content">
+                    <p class="hero-kicker">Concremex | Rondonopolis-MT</p>
+                    <h1>Infraestrutura em concreto para obras urbanas e industriais</h1>
+                    <p class="hero-subtitle">Pavimentadoras, manilhas, aduelas, caixas QDP/TDP e pecas sob medida, com rastreabilidade e conformidade com normas ABNT.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#orcamento">Solicitar orcamento</a>
+                        <a class="btn btn-secondary" href="https://wa.me/55669996464790" target="_blank" rel="noopener">Falar no WhatsApp</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -134,13 +139,13 @@
                 </div>
                 <div class="contact-columns">
                     <address class="contact-list">
-                        <p><strong>Endereco:</strong> Micro Distrito Anézio Pereira de Oliveira - Rua 04, lote 26/28 - Vila Operária, Rondonópolis - MT</p>
+                        <p><strong>Endereco:</strong> Micro Distrito Anazio Pereira de Oliveira - Rua 04, lote 26/28 - Vila Operaria, Rondonopolis - MT</p>
                         <p><strong>CEP:</strong> 78721-804</p>
                         <p><strong>Telefone / WhatsApp:</strong> <a href="https://wa.me/55669996464790" target="_blank" rel="noopener">(66) 9 9646-4790</a></p>
                         <p><strong>E-mail:</strong> <a href="mailto:concremex2001@gmail.com">concremex2001@gmail.com</a></p>
                     </address>
                     <div class="contact-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.2153261455055!2d-54.6178446!3d-16.413887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9379c90c313bba83%3A0xa326b386c9bf29ea!2sConcremex!5e0!3m2!1spt-BR!2sbr!4v1763469009785!5m2!1spt-BR!2sbr" width="800" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da Concremex"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.2153261455055!2d-54.6178446!3d-16.413887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9379c90c313bba83%3A0xa326b386c9bf29ea!2sConcremex!5e0!3m2!1spt-BR!2sbr!4v1763469009785!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa da Concremex"></iframe>
                     </div>
                 </div>
             </div>
@@ -198,7 +203,7 @@
 
     <footer class="site-footer">
         <div class="container footer-content">
-            <p><strong>CONCREMEX PRE MOLDADOS LTDA</strong> | CNPJ 04.414.614/0001-70 | Rondonópolis - MT</p>
+            <p><strong>CONCREMEX PRE MOLDADOS LTDA</strong> | CNPJ 04.414.614/0001-70 | Rondonopolis - MT</p>
             <p>
                 <a href="https://wa.me/55669996464790" target="_blank" rel="noopener">WhatsApp</a>
                 <span aria-hidden="true">&bull;</span>
@@ -223,7 +228,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   const result = await response.json();
 
   if (result.sucesso) {
-    alert("Orçamento enviado com sucesso!");
+    alert("Orcamento enviado com sucesso!");
     form.reset();
   } else {
     alert("Erro: " + JSON.stringify(result));

@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import fetch from "node-fetch";
 import dotenv from "dotenv";
+import nodemailer from "nodemailer";
 
 dotenv.config();
 
@@ -10,39 +10,52 @@ app.use(cors());
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
-const TOKEN = process.env.CONTA_AZUL_ACCESS_TOKEN;
 
 app.post("/api/contaazul/orcamento", async (req, res) => {
-  try {
-    const payload = req.body;
+  const dados = req.body || {};
+  const smtpPort = Number(process.env.SMTP_PORT || 587);
 
-    const response = await fetch("https://api.contaazul.com/v1/sales", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: smtpPort,
+    secure: smtpPort === 465,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  const corpoEmail = [
+    "Novo orçamento recebido pelo site Concremex:",
+    `Nome: ${dados.nome || ""}`,
+    `E-mail: ${dados.email || ""}`,
+    `Telefone: ${dados.telefone || ""}`,
+    `Empresa: ${dados.empresa || ""}`,
+    `Cidade: ${dados.cidade || ""}`,
+    `Produto: ${dados.produto || ""}`,
+    `Quantidade: ${dados.quantidade || ""}`,
+    `Observações: ${dados.observacoes || ""}`,
+    "",
+    "Dados completos:",
+    JSON.stringify(dados, null, 2),
+  ].join("\n");
+
+  try {
+    await transporter.sendMail({
+      from: `"Site Concremex" <${process.env.SMTP_USER}>`,
+      to: process.env.ORCAMENTO_DESTINO,
+      subject: "Novo orçamento recebido pelo site Concremex",
+      text: corpoEmail,
     });
 
-    const result = await response.json();
-
-    if (!response.ok) {
-      return res.status(400).json({
-        erro: true,
-        detalhes: result,
-      });
-    }
-
-    res.json({
+    return res.json({
       sucesso: true,
-      mensagem: "Integração concluída com sucesso!",
-      retorno: result,
+      mensagem: "Orçamento recebido e enviado por e-mail com sucesso.",
     });
   } catch (error) {
-    res.status(500).json({
+    return res.status(500).json({
       erro: true,
-      mensagem: "Falha na integração",
+      mensagem: "Falha ao processar o orçamento.",
       detalhes: error.message,
     });
   }
